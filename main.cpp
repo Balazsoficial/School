@@ -668,8 +668,8 @@ int main() {
             }
         }
         else {
-            cout << "E nehezebb mint B?" << endl;
-            cin >> EB;
+            cout << "E nehezebb mint A?" << endl;
+            cin >> EA;
             if(EA) {
                 cout << "CBEA" << endl;
                 cout << "D nehezebb mint E?" << endl;
