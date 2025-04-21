@@ -3,13 +3,16 @@
 //
 #include <iostream>
 #include <math.h>
+#include <vector>
 using namespace std;
 
 int main() {
 
 
 
-    int a,b,c,d,e,x,y;
+    double a,b,c,d,e,x,y;
+    vector<double> szelsok;
+    int balancer;
 
     cout << "Add meg x^2 értékét" << endl;
     cin >> a;
@@ -22,26 +25,41 @@ int main() {
     cout << "Add meg a konstans értékét" << endl;
     cin >> e;
     cout << a<<"x^2 + " <<b<<"xy + "<<c<<"x + "<<d<<"y + "<<e<< " = 0" <<endl;
-    if (a==0) {
-        if ((b+c)==0) {
-            cout << "A tört alja 0 tehát nem megoldhato" << endl;
-        }
-        else {
-            {    cout << "x= " << -(d+e)/b+c<<" y" <<endl;
-    cout << "elsofoku!"<<endl;}
+    cout <<endl;
+    cout << (e*b*b-c*b*d+a*d*d)<<endl;
+    if (d<0){balancer= abs(d);}
+    else if (d>0){balancer= -abs(d);}
+
+    for (int i=-(e*b*b-c*b*d+a*d*d)+balancer;i<=(e*b*b-c*b*d+a*d*d)+balancer;i++) {
+        if (((e*b*b-c*b*d+a*d*d)/(b*i+d))==1||((e*b*b-c*b*d+a*d*d)/(b*i+d)==-1))
+            {
+                cout << "Szelso ertek x:  " << i << endl;
+                szelsok.push_back(i);
+                //cout << ((e*b*b-c*b*d+a*d*d)/(b*i-d)) << endl;
+            }
+        else if(((e*b*b-c*b*d+a*d*d)/(b*i-d))==0) {
+            if (szelsok.empty())
+            {x=0;
+                if (((a*b*x+c*b-a*d + (e*b*b-c*b*d+a*d*d)/b*d*x)/(b*b)) == static_cast<int>(a*b*x+c*b-a*d + (e*b*b-c*b*d+a*d*d)/b*d*x)/(b*b)) {
+                    cout << -(a*b*x+c*b-a*d + (e*b*b-c*b*d+a*d*d)/b*d*x)/(b*b)<<" es barmely szam kombinacioja" <<endl;
+                }
+
+
+            exit(0);}
+
         }
 
     }
-    if (a!=0) {
-        cout << "masodfoku" << endl;
-        if (pow(b+c,2) -4*a*(d+e)>0||pow(b+c,2) -4*a*(d+e)==0) {
-            cout <<"x1= " << (-(b+c)+sqrt(pow(b+c, 2) -4*a*(d+e)))/(2*a)<<" y1" <<endl;
-            cout <<"x2= " << (-(b+c)-sqrt(pow(b+c, 2) -4*a*(d+e)))/(2*a)<<" y2" <<endl;
-        }
-        else {
-            cout <<"Diszkriminált" <<   endl;
+
+
+    for (x=szelsok[0];x<=szelsok[1];x++) {
+        double eredmeny = ((a*b*x+c*b-a*d) + (e*b*b-c*b*d+a*d*d)/(b*x+d))/(b*b) ;
+        if (eredmeny == static_cast<int>(eredmeny)){
+            cout << -(a*b*x+c*b-a*d + (e*b*b-c*b*d+a*d*d)/(b*x+d))/(b*b)<<" ------- x: " <<x <<endl;
         }
 
     }
+
+
 
 }
