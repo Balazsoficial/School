@@ -30,7 +30,7 @@ int main() {
     if (d<0){balancer= abs(d);}
     else if (d>0){balancer= -abs(d);}
 
-    for (int i=-(e*b*b-c*b*d+a*d*d)+balancer;i<=(e*b*b-c*b*d+a*d*d)+balancer;i++) {
+    for (int i=-abs((e*b*b-c*b*d+a*d*d)+balancer);i<=abs((e*b*b-c*b*d+a*d*d)+balancer);i++) {
         if (((e*b*b-c*b*d+a*d*d)/(b*i+d))==1||((e*b*b-c*b*d+a*d*d)/(b*i+d)==-1))
             {
                 cout << "Szelso ertek x:  " << i << endl;
@@ -51,12 +51,19 @@ int main() {
 
     }
 
-
-    for (x=szelsok[0];x<=szelsok[1];x++) {
+    cout << szelsok.back()<<endl;
+    for (x=szelsok[0];x<=szelsok.back();x++) {
         double eredmeny = ((a*b*x+c*b-a*d) + (e*b*b-c*b*d+a*d*d)/(b*x+d))/(b*b) ;
+        cout << eredmeny<<endl;
+        if (isnan(eredmeny)) {
+            cout << "ez nem megoldható mivel: polinómos módon mivel végtelen megoldás lesz" << (e*b*b-c*b*d+a*d*d) <<"/" << b*x+d << "/" << (b*b)<<endl;
+            cout << "és ez nem egy számot ad!";
+        }
+
         if (eredmeny == static_cast<int>(eredmeny)){
             cout << -(a*b*x+c*b-a*d + (e*b*b-c*b*d+a*d*d)/(b*x+d))/(b*b)<<" ------- x: " <<x <<endl;
         }
+
 
     }
 
