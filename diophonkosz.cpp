@@ -38,7 +38,7 @@ int main() {
             {
                 cout << "Szelso ertek x:  " << i << endl;
                 szelsok.push_back(i);
-                //cout << ((e*b*b-c*b*d+a*d*d)/(b*i-d)) << endl;
+
             }
             else if(((e*b*b-c*b*d+a*d*d)/(b*i-d))==0) {
                 if (szelsok.empty())
