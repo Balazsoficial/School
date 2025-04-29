@@ -33,8 +33,8 @@ int main() {
         cout << "Mivel XY 0 ezért a függvénynek vagy végtelen vagy 0 megoldása van és nem megoldható polinomokkal" <<endl;
     }
     else {
-        for (int i=-abs((e*b*b-c*b*d+a*d*d)+balancer);i<=abs((e*b*b-c*b*d+a*d*d)+balancer);i++) {
-            if (((e*b*b-c*b*d+a*d*d)/(b*i+d))==1||((e*b*b-c*b*d+a*d*d)/(b*i+d)==-1))
+        for (int i=-abs((e*b*b-c*b*d+a*d*d)+balancer);i<=abs((e*b*b-c*b*d+a*d*d)+balancer);i++) {        
+            if ((e*b*b-c*b*d+a*d*d)/(b*i+d)==static_cast<int>((e*b*b-c*b*d+a*d*d)/(b*i+d)))
             {
                 cout << "Szelso ertek x:  " << i << endl;
                 szelsok.push_back(i);
@@ -53,11 +53,10 @@ int main() {
             }
 
         }
-
+        cout << szelsok[0] << endl;
         cout << szelsok.back()<<endl;
         for (x=szelsok[0];x<=szelsok.back();x++) {
             double eredmeny = ((a*b*x+c*b-a*d) + (e*b*b-c*b*d+a*d*d)/(b*x+d))/(b*b) ;
-            cout << eredmeny<<endl;
             if (isnan(eredmeny)) {
                 cout << "ez nem megoldható mivel: polinómos módon mivel végtelen megoldás lesz" << (e*b*b-c*b*d+a*d*d) <<"/" << b*x+d << "/" << (b*b)<<endl;
                 cout << "és ez nem egy számot ad!";
@@ -71,3 +70,4 @@ int main() {
         }
     }
 }
+//2,-4,3,-5,4
