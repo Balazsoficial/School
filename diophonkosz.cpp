@@ -19,9 +19,11 @@ int main() {
     cout << "Add meg xy értékét" << endl;
     cin >> b;
     cout << "Add meg x értékét" << endl;
+    do{
     cin >> c;
     cout << "Add mg y értékét" << endl;
     cin >> d;
+    } while(b==0&&c==0);
     cout << "Add meg a konstans értékét" << endl;
     cin >> e;
     cout << a<<"x^2 + " <<b<<"xy + "<<c<<"x + "<<d<<"y + "<<e<< " = 0" <<endl;
@@ -29,8 +31,12 @@ int main() {
     cout << (e*b*b-c*b*d+a*d*d)<<endl;
     if (d<0){balancer= abs(d);}
     else if (d>0){balancer= -abs(d);}
+    
     if(b==0) {
         cout << "Mivel XY 0 ezért a függvénynek vagy végtelen vagy 0 megoldása van és nem megoldható polinomokkal" <<endl;
+    }
+    else if(b==0&&a==0&&c==0&&d==0&&e==0){
+    cout << "A függvény bármely számra nullát és nullára bármely számot adja mint x,y" << endl;
     }
     else {
         for (int i=-abs((e*b*b-c*b*d+a*d*d)+balancer);i<=abs((e*b*b-c*b*d+a*d*d)+balancer);i++) {        
