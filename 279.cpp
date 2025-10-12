@@ -2,6 +2,7 @@
 // Created by Balazsoficial on 2025. 09. 05..
 //
 #include <iostream>
+#include <bo>
 using namespace std;
 int main() {
     for (long long i =5; i<=9223372036854775807;i=i+10){
