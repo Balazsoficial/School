@@ -18,7 +18,7 @@ bool Is_Taken(int num) {
 }
 int Calc_Sum(int Start,int Step) {
     int Sum =0;
-    for (size_t i = Start+1; i <= Start+Step; i++) {
+    for (size_t i = Start+1; i <= Start+Step; i++) { //optimalizacio ha egy listaba bepotyogjuk es taroljuk a sumot
         Sum+=Nums[i];
         }
     return Sum;
