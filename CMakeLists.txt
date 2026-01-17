@@ -10,13 +10,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add your executable target
 add_executable(school
-        heronsqr.cpp
-        # add more .cpp files here if needed
+        roka.cpp
 )
 
 # Boost
-set(Boost_USE_STATIC_LIBS OFF)
-find_package(Boost REQUIRED)
-target_link_libraries(school PRIVATE Boost::boost)
+#set(Boost_USE_STATIC_LIBS OFF)
+#find_package(Boost REQUIRED)
+#target_link_libraries(school PRIVATE Boost::boost)
 
 # GMP
